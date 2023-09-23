@@ -3,6 +3,8 @@ from concurrent.futures import ThreadPoolExecutor
 import serial 
 import time
 
+##1P1768#2P1120#3P1655#4P2021#5P697#6P1796#7P1852#8P1204#9P1430#10P1486T1000D500 podtion right above left
+
 execute = ThreadPoolExecutor()
 serialport=serial.Serial("COM7",115200,timeout=0.1)
 def mouthLoop(serialPort):
@@ -53,6 +55,7 @@ def start_task():
         
         print('start')
         #Execution of preset instructions
+        if
         write_instruction(serialport,"#1P1570#2P1500#3P1500#4P1500#20P1500#21P1500#22P1500#23P1500#24P1500#25P1500T1000D800\r\n")
         
         time.sleep(2)
@@ -73,6 +76,6 @@ def run():
     future3 = execute.submit(start_task)
     future = execute.submit(mouthLoop(serialport))
     
-    return future, future3
+    return future, future3
 
 run()
